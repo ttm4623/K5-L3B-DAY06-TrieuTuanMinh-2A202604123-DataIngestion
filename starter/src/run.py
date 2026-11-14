@@ -24,6 +24,7 @@ def main() -> None:
     db_url = "postgresql://day6:day6_local_only@localhost:55433/day6_lab"
     
     # 1. Load Corpus & Benchmark
+    root_dir = Path(__file__).resolve().parent.parent.parent
     corpus_path = Path("data/pg39272-images.html")
     benchmark_path = Path("data/tesla_benchmark.json")
 

@@ -3,7 +3,7 @@ from pathlib import Path
 import re
 import unicodedata
 from bs4 import BeautifulSoup
-from .models import DocumentPage
+from models import DocumentPage
 
 
 def load_html_corpus(path: Path, document_id: str, source: str) -> list[DocumentPage]:

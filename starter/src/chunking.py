@@ -1,5 +1,5 @@
 """Implement fixed-size and structure-aware chunking."""
-from .models import Chunk, DocumentPage
+from models import Chunk, DocumentPage
 
 
 def fixed_size(page: DocumentPage, size: int, overlap: int) -> list[Chunk]:

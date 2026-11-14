@@ -3,7 +3,7 @@ from typing import Any
 import json
 import psycopg2
 from pgvector.psycopg2 import register_vector
-from .models import Chunk
+from models import Chunk
 
 
 class PgVectorStore:
