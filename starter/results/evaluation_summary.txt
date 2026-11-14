@@ -1,66 +1,78 @@
 DAY 06 - KET QUA DANH GIA RETRIEVAL
 ===================================
-Trang thai: CHUA CO KET QUA BENCHMARK DA XAC MINH
+Trang thai: PIPELINE HOAN TAT (theo output terminal nguoi dung cung cap)
 
-Luu y:
-File nay ghi lai cac du kien da kiem tra va cac so do con thieu. Khong dien
-Hit@1/Hit@3 hoac diem cham thu cong khi chua co trace va nhan tu mot lan chay
-co the tai lap. Khong dung cac gia tri duoi day nhu ket qua retrieval.
+Nguon so lieu:
+- Cac metric va so chunk duoi day duoc chuyen tu output terminal do nguoi dung
+  cung cap; khong tu chay lai pipeline.
+- Output benchmark khong ghi trace tung cau hoi; mot output similarity-search
+  rieng co Chunk ID va score, duoc ghi o muc 4.
+- Khong co nhan cham thu cong coherence, metadata hay grounding.
 
-1. DU LIEU DA KIEM TRA
+1. CAU HINH VA SO CHUNK
+-----------------------
+- Embedding: all-MiniLM-L6-v2, 384 dimensions.
+- Strategy A (fixed): 2,150 chunks; size=500, overlap=50.
+- Strategy B (paragraph): 1,210 chunks; max_size=800.
+- Strategy C (paragraph + filter): 1,210 chunks; max_size=800.
+- Vector store: PostgreSQL + pgvector; cosine search theo source code.
+
+2. HIT RATE
+-----------
+Strategy A:
+  Dev  (15 cau): Hit@1 1/15 = 6.67%; Hit@3 2/15 = 13.33%.
+  Test  (5 cau): Hit@1 2/5  = 40.00%; Hit@3 2/5 = 40.00%.
+Strategy B:
+  Dev  (15 cau): Hit@1 1/15 = 6.67%; Hit@3 2/15 = 13.33%.
+  Test  (5 cau): Hit@1 1/5  = 20.00%; Hit@3 1/5 = 20.00%.
+Strategy C:
+  Dev  (15 cau): Hit@1 1/15 = 6.67%; Hit@3 2/15 = 13.33%.
+  Test  (5 cau): Hit@1 1/5  = 20.00%; Hit@3 1/5 = 20.00%.
+
+Tong hop ca 20 cau (tinh tu so dem tren):
+  A: Hit@1 3/20 = 15.00%; Hit@3 4/20 = 20.00%.
+  B: Hit@1 2/20 = 10.00%; Hit@3 3/20 = 15.00%.
+  C: Hit@1 2/20 = 10.00%; Hit@3 3/20 = 15.00%.
+
+Hit@3 la ten metric terminal in ra. Ma nguon kiem tra evidence quote trong
+chunk; can luu trace de kiem tra tung hit va cach match evidence.
+
+3. NHAN XET / GIOI HAN
 ---------------------
-- Corpus: starter/data/pg39272-images.html (co trong workspace).
-- Nguon theo data/manifest.json: Project Gutenberg eBook #39272,
-  "The Inventions, Researches and Writings of Nikola Tesla";
-  manifest khai bao 43 don vi.
-- Ket qua goi load_html_corpus trong moi truong hien tai: 1 don vi,
-  page_id rong, 967347 ky tu. So lieu nay khong khop voi 43 don vi trong
-  manifest; can sua/kiem tra parser truoc khi tin cac so do retrieval.
-- Benchmark data/tesla_benchmark.json: 20 cau, 15 dev va 5 test;
-  ca 20 cau co evidence_quote. Khong cau nao co truong filter.
-- Da quan sat bang truy van doc-only truoc do: bang chunks co 4570 dong tong.
-  Khong co thong ke theo strategy hoac trace retrieval duoc xac nhan.
+- Tren tap test 5 cau nay, A cao hon B va C 1/5 cau o ca Hit@1 va Hit@3.
+- Dev cua ca ba strategy bang nhau theo output.
+- B va C co cung so chunks va cung metric trong output; chua thay loi ich
+  dinh luong cua filter tren benchmark nay.
+- Mau test chi co 5 cau; khong suy rong ket qua thanh ket luan tong quat.
+- Benchmark hien tai khong co truong filter; source C ap dung section=
+  "chapters" co dinh cho moi truy van, nen chua danh gia duoc filter theo
+  yeu cau tung cau.
+- So chunk khop tong 4,570 dong da quan sat truoc do (2,150 + 1,210 + 1,210).
+- Parser da duoc kiem tra rieng truoc do chi tra ve 1 unit voi page_id rong
+  trong khi manifest liet ke 43 units; can doi chieu mapping truoc khi tin
+  rang moi chunk co truy vet nguon/unit chinh xac.
+- Khong co Chunk ID/score gan voi tung cau benchmark trong output benchmark.
+- Thoi gian, chi phi, coherence, metadata audit va grounding thu cong:
+  chua co so lieu.
 
-2. CAU HINH KHAI BAO TRONG MA NGUON
+4. KET LUAN
+-----------
+Theo metric terminal, A co ket qua test cao hon mot cau so voi B/C, con B/C
+bang nhau. Day la ket qua tren bo test nho, chua du bang chung de khang dinh
+A tot hon noi chung. Can bo sung trace top-3 (question ID, Chunk ID, score,
+metadata, text va gold), xac minh page/unit mapping, va cham thu cong cac
+tieu chi con thieu truoc khi hoan tat bao cao.
+
+5. KET QUA SIMILARITY SEARCH RIENG
 ----------------------------------
-- A: fixed-size chunk, size=500, overlap=50.
-- B: paragraph chunk, max_size=800.
-- C: cung paragraph chunk nhu B; code dang loc section="chapters"
-  cho moi cau hoi. Day la loc co dinh, khong phai filter theo tung cau hoi.
-- Embedding: SentenceTransformer "all-MiniLM-L6-v2".
-- Vector store: PostgreSQL + pgvector, cosine distance.
-- Database: ket noi local port 55433 theo cau hinh trong starter/src/run.py.
+Output terminal co mot truy van similarity search kiem thu, tach rieng voi
+bang Hit@1/Hit@3 benchmark. Theo source run_pipeline.py, truy van kiem thu la:
+"What did Tesla invent regarding alternating current motors?"
 
-Day la cau hinh trong source, khong phai bang chung rang mot lan benchmark
-hoan tat thanh cong.
+Top 1: Chunk ID _fixed_020 | similarity 0.7939
+Top 2: Chunk ID _fixed_217 | similarity 0.7654
+Top 3: Chunk ID _fixed_019 | similarity 0.7237
 
-3. SO DO
---------
-Metric                         Dev                 Test
-Hit@1                          CHUA DO              CHUA DO
-Evidence Hit@3                 CHUA DO              CHUA DO
-So chunk / thoi gian / chi phi CHUA DO              CHUA DO
-Coherence thu cong (/2)        CHUA CHAM            CHUA CHAM
-Metadata dung va du            CHUA KIEM TRA        CHUA KIEM TRA
-Filter compliance              KHONG DU DU LIEU     KHONG DU DU LIEU
-Grounding thu cong (/2)        CHUA CHAM            CHUA CHAM
-
-Khong co trace top-3 duoc luu hoac xac nhan. artifacts/experiment_log.csv
-hien chi co header, chua co dong ket qua.
-
-4. DIEU KIEN DE CO KET QUA TIN CAY
-----------------------------------
-1. Kiem tra parser de tao dung cac don vi co page_id va lien ket dung
-   gold_unit_id trong benchmark; benchmark hien khong co filter field.
-2. Chay cung mot model, corpus, store va bo cau hoi cho A/B/C; luu top-3
-   trace co chunk_id, text, score, metadata, gold va nhan match.
-3. Chi sau khi trace duoc tao moi tinh Hit@1/Evidence Hit@3 tach dev/test.
-4. Cham thu cong chunk coherence, metadata va grounding; ghi mau, nhan,
-   ly do, nguoi cham va han che.
-5. Ghi so chunk, thoi gian ingest/truy van va chi phi (neu co), cung voi
-   moi truong va lenh chay. Khong ghi de len du lieu database hien co khi
-   chua duoc phep.
-
-Ket luan hien tai: chua the xep hang A/B/C hoac tuyen bo chien luoc tot nhat.
-Can khac phuc sai lech parser/manifest va tao trace co the kiem tra truoc khi
-bao cao cac metric.
+Output cho biet chunk ID chi co suffix "_fixed_..." (khong co page/unit ID).
+Khong dung ba score nay lam metric Hit@3 benchmark; can giu ro day la mot query
+kiem thu rieng.

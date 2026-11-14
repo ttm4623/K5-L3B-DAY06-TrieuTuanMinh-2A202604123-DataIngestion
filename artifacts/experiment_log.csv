@@ -1,4 +1,4 @@
 strategy,chunking,chunk_size,overlap,metadata,filter,vectorizer,hypothesis,dev_hit1,dev_hit3,test_hit1,test_hit3,notes
-A,,,,,,,,,,,,
-B,,,,,,,,,,,,
-C,,,,,,,,,,,,
+A,fixed_size,500,50,"section=chapters; document_type=book",none,"all-MiniLM-L6-v2 (384d)",not_recorded,6.67,13.33,40.00,40.00,"chunks=2150; dev=1/15,2/15; test=2/5,2/5"
+B,paragraph,800,NA,"section=chapters; document_type=book",none,"all-MiniLM-L6-v2 (384d)",not_recorded,6.67,13.33,20.00,20.00,"chunks=1210; dev=1/15,2/15; test=1/5,1/5"
+C,paragraph,800,NA,"section=chapters; document_type=book","section=chapters (all queries)","all-MiniLM-L6-v2 (384d)",not_recorded,6.67,13.33,20.00,20.00,"chunks=1210; dev=1/15,2/15; test=1/5,1/5"
