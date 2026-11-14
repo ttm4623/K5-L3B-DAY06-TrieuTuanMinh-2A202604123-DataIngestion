@@ -91,7 +91,7 @@ class PgVectorStore:
         """
         with self._conn.cursor() as cur:
             sql = """
-                SELECT chunk_id, text, 1 - (embedding <=> %s) AS score, metadata, source, page
+                SELECT chunk_id, text, 1 - (embedding <=> %s::vector) AS score, metadata, source, page
                 FROM chunks
                 WHERE strategy = %s
             """
@@ -102,7 +102,7 @@ class PgVectorStore:
                     sql += " AND metadata->>%s = %s"
                     params.extend([key, str(val)])
 
-            sql += " ORDER BY embedding <=> %s LIMIT %s;"
+            sql += " ORDER BY embedding <=> %s::vector LIMIT %s;"
             params.extend([query_vector, top_k])
 
             cur.execute(sql, params)

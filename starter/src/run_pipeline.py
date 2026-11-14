@@ -84,9 +84,9 @@ def main():
         query_vector = embedder.embed_query(test_query)
         
         cur.execute("""
-            SELECT chunk_id, text, 1 - (embedding <=> %s) AS similarity
+            SELECT chunk_id, text, 1 - (embedding <=> %s::vector) AS similarity
             FROM tesla_chunks
-            ORDER BY embedding <=> %s
+            ORDER BY embedding <=> %s::vector
             LIMIT 3;
         """, (query_vector, query_vector))
         
