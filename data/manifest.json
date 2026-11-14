@@ -1,0 +1,180 @@
+{
+  "source_id": "gutenberg_tesla_inventions_39272",
+  "title": "The Inventions, Researches and Writings of Nikola Tesla",
+  "author": "Thomas Commerford Martin",
+  "source_path_or_url": "https://www.gutenberg.org/cache/epub/39272/pg39272-images.html",
+  "license_or_permission": "Public Domain (Project Gutenberg eBook - Free for use anywhere at no cost and with almost no restrictions)",
+  "accessed_at": "2026-11-14",
+  "document_type": "HTML/Text eBook",
+  "total_units_or_pages": 43,
+  "units": [
+    {
+      "unit_id": "intro_preface",
+      "title": "Preface & Contents",
+      "character_count": 4200,
+      "approx_pages": "v-xi"
+    },
+    {
+      "unit_id": "ch_01",
+      "title": "Chapter I. Biographical and Introductory",
+      "character_count": 4500,
+      "approx_pages": "3-6"
+    },
+    {
+      "unit_id": "ch_02",
+      "title": "Chapter II. A New System of Alternating Current Motors and Transformers",
+      "character_count": 2100,
+      "approx_pages": "7-8"
+    },
+    {
+      "unit_id": "ch_03",
+      "title": "Chapter III. The Tesla Rotating Magnetic Field — Motors with Closed Conductors",
+      "character_count": 5200,
+      "approx_pages": "9-25"
+    },
+    {
+      "unit_id": "ch_04",
+      "title": "Chapter IV. Modifications and Expansions of the Tesla Polyphase Systems",
+      "character_count": 3100,
+      "approx_pages": "26-30"
+    },
+    {
+      "unit_id": "ch_05",
+      "title": "Chapter V. Utilizing Familiar Types of Generators of the Continuous Current Type",
+      "character_count": 2800,
+      "approx_pages": "31-35"
+    },
+    {
+      "unit_id": "ch_06",
+      "title": "Chapter VI. Method of Obtaining Desired Speed of Motor Or Generator",
+      "character_count": 4600,
+      "approx_pages": "36-44"
+    },
+    {
+      "unit_id": "ch_07",
+      "title": "Chapter VII. Regulator for Rotary Current Motors",
+      "character_count": 2500,
+      "approx_pages": "45-49"
+    },
+    {
+      "unit_id": "ch_08",
+      "title": "Chapter VIII. Single Circuit, Self-starting Synchronizing Motors",
+      "character_count": 3400,
+      "approx_pages": "50-55"
+    },
+    {
+      "unit_id": "ch_09",
+      "title": "Chapter IX. Change from Double Current to Single Current Motors",
+      "character_count": 1800,
+      "approx_pages": "56-57"
+    },
+    {
+      "unit_id": "ch_10",
+      "title": "Chapter X. Motor with 'Current Lag' Artificially Secured",
+      "character_count": 2200,
+      "approx_pages": "58-61"
+    },
+    {
+      "unit_id": "ch_11",
+      "title": "Chapter XI. Another Method of Transformation from a Torque to a Synchronizing Motor",
+      "character_count": 2900,
+      "approx_pages": "62-66"
+    },
+    {
+      "unit_id": "ch_12",
+      "title": "Chapter XII. 'Magnetic Lag' Motor",
+      "character_count": 2600,
+      "approx_pages": "67-70"
+    },
+    {
+      "unit_id": "ch_13",
+      "title": "Chapter XIII. Method of Obtaining Difference of Phase by Magnetic Shielding",
+      "character_count": 3100,
+      "approx_pages": "71-75"
+    },
+    {
+      "unit_id": "ch_14",
+      "title": "Chapter XIV. Type of Tesla Single-Phase Motor",
+      "character_count": 2400,
+      "approx_pages": "76-78"
+    },
+    {
+      "unit_id": "ch_15",
+      "title": "Chapter XV. Motors With Circuits of Different Resistance",
+      "character_count": 1900,
+      "approx_pages": "79-80"
+    },
+    {
+      "unit_id": "ch_16",
+      "title": "Chapter XVI. Motor with Equal Magnetic Energies in Field and Armature",
+      "character_count": 2000,
+      "approx_pages": "81-82"
+    },
+    {
+      "unit_id": "ch_17",
+      "title": "Chapter XVII. Motors with Coinciding Maxima of Magnetic Effect in Armature and Field",
+      "character_count": 2300,
+      "approx_pages": "83-87"
+    },
+    {
+      "unit_id": "ch_18",
+      "title": "Chapter XVIII. Motor Based on Difference of Phase in Magnetization of Inner and Outer Parts of Iron Core",
+      "character_count": 3000,
+      "approx_pages": "88-91"
+    },
+    {
+      "unit_id": "ch_19",
+      "title": "Chapter XIX. Another Type of Tesla Induction Motor",
+      "character_count": 2500,
+      "approx_pages": "92-94"
+    },
+    {
+      "unit_id": "ch_20",
+      "title": "Chapter XX. Combinations of Synchronizing Motor and Torque Motor",
+      "character_count": 4200,
+      "approx_pages": "95-100"
+    },
+    {
+      "unit_id": "ch_21",
+      "title": "Chapter XXI. Motor with a Condenser in the Armature Circuit",
+      "character_count": 3300,
+      "approx_pages": "101-105"
+    },
+    {
+      "unit_id": "ch_22",
+      "title": "Chapter XXII. Motor with Condenser in One of the Field Circuits",
+      "character_count": 2700,
+      "approx_pages": "106-108"
+    },
+    {
+      "unit_id": "ch_23",
+      "title": "Chapter XXIII. Tesla Polyphase Transformer",
+      "character_count": 3100,
+      "approx_pages": "109-112"
+    },
+    {
+      "unit_id": "ch_24",
+      "title": "Chapter XXIV. A Constant Current Transformer with Magnetic Shield",
+      "character_count": 3500,
+      "approx_pages": "113-118"
+    },
+    {
+      "unit_id": "ch_25_32",
+      "title": "Part II. The Tesla Effects with High Frequency and High Potential Currents (Chapters XXV - XXXII)",
+      "character_count": 35000,
+      "approx_pages": "119-408"
+    },
+    {
+      "unit_id": "ch_33_41",
+      "title": "Part III. Miscellaneous Inventions and Writings (Chapters XXXIII - XLI)",
+      "character_count": 28000,
+      "approx_pages": "409-476"
+    },
+    {
+      "unit_id": "ch_42_43",
+      "title": "Part IV. Appendix: Early Phase Motors and The Tesla Oscillators (Chapters XLII - XLIII)",
+      "character_count": 12000,
+      "approx_pages": "477-500"
+    }
+  ]
+}
