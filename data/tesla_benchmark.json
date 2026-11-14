@@ -1,0 +1,182 @@
+[
+  {
+    "question_id": "q01",
+    "split": "dev",
+    "question": "Nikola Tesla sinh năm nào và tại vùng đất nào?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_01",
+    "evidence_quote": "Nikola Tesla was born in 1857 at Smiljan, Lika, a borderland region of Austro-Hungary, of the Serbian race...",
+    "expected_answer": "Sinh năm 1857 tại Smiljan, Lika (vùng biên giới Áo - Hung)."
+  },
+  {
+    "question_id": "q02",
+    "split": "dev",
+    "question": "Mẹ của Nikola Tesla có sở thích và năng khiếu gì trong việc chế tạo?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_01",
+    "evidence_quote": "His mother was a woman of inherited ingenuity, and delighted not only in skilful work of the ordinary household character, but in the construction of such mechanical appliances as looms and churns and other machinery required in a rural community.",
+    "expected_answer": "Bà có sự khéo léo bẩm sinh, thích làm đồ thủ công gia dụng và chế tạo các thiết bị cơ khí như khung cửi, máy đánh bơ."
+  },
+  {
+    "question_id": "q03",
+    "split": "dev",
+    "question": "Khi theo học tại Trường Bách khoa ở Gratz, Tesla ban đầu có định hướng trở thành giáo sư môn gì?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_01",
+    "evidence_quote": "...with the object of becoming a professor of mathematics and physics.",
+    "expected_answer": "Giáo sư toán học và vật lý."
+  },
+  {
+    "question_id": "q04",
+    "split": "dev",
+    "question": "Khi quan sát máy phát điện Gramme hoạt động như một động cơ tại trường Gratz, Tesla đã có trực giác gì về cổ góp và chổi than?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_01",
+    "evidence_quote": "Despite his instructor's perfect demonstration of the fact that it was impossible to operate a dynamo without commutator or brushes, Mr. Tesla could not be convinced that such accessories were necessary or desirable. He had already seen with quick intuition that a way could be found to dispense with them...",
+    "expected_answer": "Ông tin rằng có thể tìm ra cách loại bỏ cổ góp và chổi than, trái ngược với khẳng định của giảng viên."
+  },
+  {
+    "question_id": "q05",
+    "split": "dev",
+    "question": "Khi đặt chân đến Mỹ, nơi đầu tiên Tesla bắt tay vào làm việc ngay ngày hôm đó là gì?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_01",
+    "evidence_quote": "Arrived in the United States, Mr. Tesla took off his coat the day he arrived, in the Edison Works.",
+    "expected_answer": "Xưởng của Thomas Edison (Edison Works)."
+  },
+  {
+    "question_id": "q06",
+    "split": "dev",
+    "question": "Các vấn đề trọng tâm của ngành điện được nhắc đến trong phần Lời nói đầu (Preface) bao gồm những gì?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "intro_preface",
+    "evidence_quote": "The electrical problems of the present day lie largely in the economical transmission of power and in the radical improvement of the means and methods of illumination.",
+    "expected_answer": "Truyền tải điện năng tiết kiệm và cải tiến triệt để các phương pháp/phương tiện chiếu sáng."
+  },
+  {
+    "question_id": "q07",
+    "split": "dev",
+    "question": "Theo phần Lời nói đầu, cuốn sách ghi lại kết quả nghiên cứu trong khoảng thời gian bao lâu của Tesla?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "intro_preface",
+    "evidence_quote": "Although the lively interest of the public in Mr. Tesla's work is perhaps of recent growth, this volume covers the results of full ten years.",
+    "expected_answer": "Kết quả trong suốt toàn bộ 10 năm."
+  },
+  {
+    "question_id": "q08",
+    "split": "dev",
+    "question": "Ai là người biên soạn cuốn sách ghi chép các công trình của Nikola Tesla?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "intro_preface",
+    "evidence_quote": "THE INVENTIONS RESEARCHES AND WRITINGS OF Nikola Tesla ... BY THOMAS COMMERFORD MARTIN",
+    "expected_answer": "Thomas Commerford Martin."
+  },
+  {
+    "question_id": "q09",
+    "split": "dev",
+    "question": "Khái niệm cốt lõi nào là nền tảng cho hệ thống động cơ và máy biến áp dòng điện xoay chiều mới của Tesla được trình bày ở Chương II và Chương III?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_03",
+    "evidence_quote": "The Tesla Rotating Magnetic Field — Motors with Closed Conductors",
+    "expected_answer": "Từ trường quay (Rotating Magnetic Field)."
+  },
+  {
+    "question_id": "q10",
+    "split": "dev",
+    "question": "Ở Chương VI, Tesla đề cập đến phương pháp kỹ thuật nào liên quan đến tốc độ vận hành của thiết bị điện?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_06",
+    "evidence_quote": "Chapter VI. Method of Obtaining Desired Speed of Motor Or Generator",
+    "expected_answer": "Phương pháp đạt được tốc độ mong muốn cho động cơ hoặc máy phát điện."
+  },
+  {
+    "question_id": "q11",
+    "split": "dev",
+    "question": "Chương XIII của cuốn sách trình bày phương pháp tạo ra sự lệch pha (difference of phase) bằng kỹ thuật gì?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_13",
+    "evidence_quote": "Chapter XIII. Method of Obtaining Difference of Phase by Magnetic Shielding",
+    "expected_answer": "Tạo sự lệch pha bằng kỹ thuật chắn từ (Magnetic Shielding)."
+  },
+  {
+    "question_id": "q12",
+    "split": "dev",
+    "question": "Trong Chương XVIII, động cơ của Tesla hoạt động dựa trên sự lệch pha từ hóa giữa các bộ phận nào của lõi sắt?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_18",
+    "evidence_quote": "Chapter XVIII. Motor Based on Difference of Phase in Magnetization of Inner and Outer Parts of Iron Core",
+    "expected_answer": "Sự lệch pha trong quá trình từ hóa giữa phần bên trong (inner) và phần bên ngoài (outer) của lõi sắt."
+  },
+  {
+    "question_id": "q13",
+    "split": "dev",
+    "question": "Ở Chương XXI và XXII, linh kiện điện tử nào được Tesla mắc vào mạch phần ứng hoặc một trong các mạch kích từ của động cơ?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_21",
+    "evidence_quote": "Chapter XXI. Motor with a Condenser in the Armature Circuit ... Chapter XXII. Motor with Condenser in One of the Field Circuits",
+    "expected_answer": "Tụ điện (Condenser)."
+  },
+  {
+    "question_id": "q14",
+    "split": "dev",
+    "question": "Chương XXIV mô tả loại máy biến áp dòng điện không đổi (Constant Current Transformer) sử dụng đặc điểm cấu tạo gì?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_24",
+    "evidence_quote": "Chapter XXIV. A Constant Current Transformer with Magnetic Shield",
+    "expected_answer": "Máy biến áp dòng không đổi có màn chắn từ (Magnetic Shield)."
+  },
+  {
+    "question_id": "q15",
+    "split": "dev",
+    "question": "Phần II của cuốn sách (từ Chương XXV đến Chương XXXII) tập trung nghiên cứu các hiệu ứng của loại dòng điện nào?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_25_32",
+    "evidence_quote": "Part II. The Tesla Effects with High Frequency and High Potential Currents (Chapters XXV - XXXII)",
+    "expected_answer": "Dòng điện tần số cao và điện thế cao (High Frequency and High Potential Currents)."
+  },
+  {
+    "question_id": "q16",
+    "split": "test",
+    "question": "Cha của Nikola Tesla đảm nhận vai trò chức sắc nào?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_01",
+    "evidence_quote": "...and his father was an eloquent clergyman in the Greek Church.",
+    "expected_answer": "Một mục sư hùng biện trong Giáo hội Hy Lạp (Greek Church)."
+  },
+  {
+    "question_id": "q17",
+    "split": "test",
+    "question": "Trước khi đến Mỹ, Tesla đã sang Prague và Buda-Pesth để làm gì?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_01",
+    "evidence_quote": "...and then went to Prague and Buda-Pesth to study languages, with the object of qualifying himself broadly for the practice of the engineering profession.",
+    "expected_answer": "Học ngoại ngữ nhằm chuẩn bị nền tảng rộng hơn cho việc hành nghề kỹ sư."
+  },
+  {
+    "question_id": "q18",
+    "split": "test",
+    "question": "Trước khi sang Mỹ làm việc cho Edison, Tesla đã làm công việc liên quan đến điện thoại tại thành phố nào ở châu Âu?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_01",
+    "evidence_quote": "In Buda-Pesth he entered the engineering department of the Government telegraph and telephone system, and while there made various improvements in telephone apparatus.",
+    "expected_answer": "Buda-Pesth (làm việc tại bộ phận kỹ thuật của hệ thống điện báo và điện thoại chính phủ)."
+  },
+  {
+    "question_id": "q19",
+    "split": "test",
+    "question": "Trong Chương I, công ty đầu tiên mang tên Tesla được thành lập ở Mỹ để kinh doanh hệ thống chiếu sáng gì?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_01",
+    "evidence_quote": "In 1886 the Tesla Electric Light Company was formed, and Mr. Tesla gave his attention to the production of an arc-lighting system...",
+    "expected_answer": "Hệ thống chiếu sáng đèn hồ quang (arc-lighting system) thông qua công ty Tesla Electric Light Company thành lập năm 1886."
+  },
+  {
+    "question_id": "q20",
+    "split": "test",
+    "question": "Phần IV (Phụ lục, Chương XLII - XLIII) ở cuối sách đề cập đến những nội dung nào?",
+    "gold_source_id": "gutenberg_tesla_inventions_39272",
+    "gold_unit_id": "ch_42_43",
+    "evidence_quote": "Part IV. Appendix: Early Phase Motors and The Tesla Oscillators (Chapters XLII - XLIII)",
+    "expected_answer": "Động cơ pha đời đầu (Early Phase Motors) và các bộ dao động Tesla (The Tesla Oscillators)."
+  }
+]
