@@ -55,7 +55,7 @@ def load_html_corpus(path: Path, document_id: str, source: str) -> list[Document
         if len(normalized) > 100:
             document_pages.append(
                 DocumentPage(
-                    page_id=f"{document_id}_unit_{unit_counter:03d}",
+                    page=f"{document_id}_unit_{unit_counter:03d}",
                     document_id=document_id,
                     page_number=unit_counter,
                     source=source,

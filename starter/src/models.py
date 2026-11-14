@@ -9,6 +9,9 @@ class DocumentPage:
     source: str
     page: int
     text: str
+    page_id: str = ""
+    page_number: Any = None
+    char_count: int = 0
     metadata: dict[str, Any] = field(default_factory=dict)
 
 
@@ -16,7 +19,9 @@ class DocumentPage:
 class Chunk:
     chunk_id: str
     document_id: str
-    source: str
-    page: int
-    text: str
+    source: str = ""
+    page: int = 0
+    text: str = ""
+    page_id: str = ""
+    index: int = 0
     metadata: dict[str, Any] = field(default_factory=dict)

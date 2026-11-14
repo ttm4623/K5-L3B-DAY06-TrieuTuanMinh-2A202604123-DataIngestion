@@ -23,10 +23,13 @@ def main() -> None:
     # Cấu hình kết nối DB PostgreSQL (cổng 55433)
     db_url = "postgresql://day6:day6_local_only@localhost:55433/day6_lab"
     
-    # 1. Load Corpus & Benchmark
-    root_dir = Path(__file__).resolve().parent.parent.parent
-    corpus_path = Path("data/pg39272-images.html")
-    benchmark_path = Path("data/tesla_benchmark.json")
+    # 1. Corpus nằm trong starter/data; benchmark nằm trong data ở repository root.
+    # Xác định chính xác vị trí file trong thư mục starter/data và repo root
+    starter_dir = Path(__file__).resolve().parent.parent
+    repo_dir = starter_dir.parent
+    
+    corpus_path = starter_dir / "data" / "pg39272-images.html"
+    benchmark_path = repo_dir / "data" / "tesla_benchmark.json"
 
     document_id = "gutenberg_tesla_inventions_39272"
     source_name = "Project Gutenberg eBook #39272"
@@ -108,4 +111,10 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"\n[LỖI THỰC THI PIPELINE]: {e}")
+        print("Vui lòng kiểm tra lại:")
+        print("  1. Dịch vụ Docker / Container PostgreSQL đã bật chưa (cổng 55433)?")
+        print("  2. File corpus HTML đã đặt đúng tại 'starter/data/pg39272-images.html' chưa?")
