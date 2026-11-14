@@ -1,0 +1,66 @@
+DAY 06 - KET QUA DANH GIA RETRIEVAL
+===================================
+Trang thai: CHUA CO KET QUA BENCHMARK DA XAC MINH
+
+Luu y:
+File nay ghi lai cac du kien da kiem tra va cac so do con thieu. Khong dien
+Hit@1/Hit@3 hoac diem cham thu cong khi chua co trace va nhan tu mot lan chay
+co the tai lap. Khong dung cac gia tri duoi day nhu ket qua retrieval.
+
+1. DU LIEU DA KIEM TRA
+---------------------
+- Corpus: starter/data/pg39272-images.html (co trong workspace).
+- Nguon theo data/manifest.json: Project Gutenberg eBook #39272,
+  "The Inventions, Researches and Writings of Nikola Tesla";
+  manifest khai bao 43 don vi.
+- Ket qua goi load_html_corpus trong moi truong hien tai: 1 don vi,
+  page_id rong, 967347 ky tu. So lieu nay khong khop voi 43 don vi trong
+  manifest; can sua/kiem tra parser truoc khi tin cac so do retrieval.
+- Benchmark data/tesla_benchmark.json: 20 cau, 15 dev va 5 test;
+  ca 20 cau co evidence_quote. Khong cau nao co truong filter.
+- Da quan sat bang truy van doc-only truoc do: bang chunks co 4570 dong tong.
+  Khong co thong ke theo strategy hoac trace retrieval duoc xac nhan.
+
+2. CAU HINH KHAI BAO TRONG MA NGUON
+----------------------------------
+- A: fixed-size chunk, size=500, overlap=50.
+- B: paragraph chunk, max_size=800.
+- C: cung paragraph chunk nhu B; code dang loc section="chapters"
+  cho moi cau hoi. Day la loc co dinh, khong phai filter theo tung cau hoi.
+- Embedding: SentenceTransformer "all-MiniLM-L6-v2".
+- Vector store: PostgreSQL + pgvector, cosine distance.
+- Database: ket noi local port 55433 theo cau hinh trong starter/src/run.py.
+
+Day la cau hinh trong source, khong phai bang chung rang mot lan benchmark
+hoan tat thanh cong.
+
+3. SO DO
+--------
+Metric                         Dev                 Test
+Hit@1                          CHUA DO              CHUA DO
+Evidence Hit@3                 CHUA DO              CHUA DO
+So chunk / thoi gian / chi phi CHUA DO              CHUA DO
+Coherence thu cong (/2)        CHUA CHAM            CHUA CHAM
+Metadata dung va du            CHUA KIEM TRA        CHUA KIEM TRA
+Filter compliance              KHONG DU DU LIEU     KHONG DU DU LIEU
+Grounding thu cong (/2)        CHUA CHAM            CHUA CHAM
+
+Khong co trace top-3 duoc luu hoac xac nhan. artifacts/experiment_log.csv
+hien chi co header, chua co dong ket qua.
+
+4. DIEU KIEN DE CO KET QUA TIN CAY
+----------------------------------
+1. Kiem tra parser de tao dung cac don vi co page_id va lien ket dung
+   gold_unit_id trong benchmark; benchmark hien khong co filter field.
+2. Chay cung mot model, corpus, store va bo cau hoi cho A/B/C; luu top-3
+   trace co chunk_id, text, score, metadata, gold va nhan match.
+3. Chi sau khi trace duoc tao moi tinh Hit@1/Evidence Hit@3 tach dev/test.
+4. Cham thu cong chunk coherence, metadata va grounding; ghi mau, nhan,
+   ly do, nguoi cham va han che.
+5. Ghi so chunk, thoi gian ingest/truy van va chi phi (neu co), cung voi
+   moi truong va lenh chay. Khong ghi de len du lieu database hien co khi
+   chua duoc phep.
+
+Ket luan hien tai: chua the xep hang A/B/C hoac tuyen bo chien luoc tot nhat.
+Can khac phuc sai lech parser/manifest va tao trace co the kiem tra truoc khi
+bao cao cac metric.
